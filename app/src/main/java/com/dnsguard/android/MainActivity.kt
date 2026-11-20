@@ -34,8 +34,7 @@ class MainActivity : Activity() {
 
     private val logListener: (String) -> Unit = { line ->
         runOnUiThread {
-            logView.append("$line
-")
+            logView.append("$line\n")
             updateButtonState()
         }
     }
@@ -111,8 +110,7 @@ class MainActivity : Activity() {
             setPadding(24, 24, 24, 24)
             minLines = 7
             gravity = Gravity.TOP
-            text = LogBus.snapshot().ifBlank { "就绪。填写配置后点击上方按钮启动。
-" }
+            text = LogBus.snapshot().ifBlank { "就绪。填写配置后点击上方按钮启动。\n" }
         }
         root.addView(logLabel)
         root.addView(logView)

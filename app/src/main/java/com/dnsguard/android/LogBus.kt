@@ -22,8 +22,7 @@ object LogBus {
     }
 
     @Synchronized
-    fun snapshot(): String = buffer.joinToString("
-")
+    fun snapshot(): String = buffer.joinToString("\n")
 
     fun addListener(l: (String) -> Unit) = listeners.add(l)
     fun removeListener(l: (String) -> Unit) = listeners.remove(l)
